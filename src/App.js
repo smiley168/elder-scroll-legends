@@ -263,7 +263,7 @@ function ElderScrollsLegends() {
     );
 }
 const client = new ApolloClient({
-  // uri: "https://llei-elder-scroll-legends-gql.herokuapp.com/"
+  // uri: "https://elder-scroll-legends-gql.herokuapp.com/"
   uri: "http://localhost:4000/"
 });
 

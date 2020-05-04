@@ -43,7 +43,9 @@ There are 2 repositories you need to pull from Github to run both locally.
 
 #### Start the GraphQL server locally
 
-```npm run start```
+1. ```npm run start```
+1. The Apollo GraphQL client url is currently hardcoded to use port 4000 at "http://localhost:4000/". If you don't have a port conflict, you can open the GraphQL playground at http://localhost:4000/ to play with the [supported GraphQL queries](https://github.com/smiley168/elder-scroll-legends-gql#currently-supported-queries).
+1. See the [GraphQL server application repo](https://github.com/smiley168/elder-scroll-legends-gql) for more details.
 
 #### Clone the React application repository from Github 
 
