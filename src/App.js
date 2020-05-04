@@ -151,8 +151,11 @@ function ElderScrollsLegends() {
         <div className={classes.heroContent}>
           <Container maxWidth="lg">
             
-            <Typography variant="h5" align="justify" color="textSecondary" paragraph>
+            <Typography align="justify" color="textSecondary" paragraph>
               The Elder Scrolls: Legends is a competitive strategy card game set in the Elder Scrolls universe. Craft decks featuring intimidating abilities and powerful allies from across all of Tamriel as you take on story-rich campaigns as well as other players.
+            </Typography>
+            <Typography align="justify" color="textSecondary" paragraph>
+              You can filter the Craft decks by name using the Search box below:
             </Typography>
             <div>
               <Grid container spacing={2} justify="center">
@@ -260,7 +263,8 @@ function ElderScrollsLegends() {
     );
 }
 const client = new ApolloClient({
-  uri: "https://llei-elder-scroll-legends-gql.herokuapp.com/"
+  // uri: "https://llei-elder-scroll-legends-gql.herokuapp.com/"
+  uri: "http://localhost:4000/"
 });
 
 const App = () => (
