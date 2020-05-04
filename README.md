@@ -71,7 +71,7 @@ https://llei-elder-scroll-legends-1.herokuapp.com/
 
 We are using the fetchMore function and the updateQuery function provided by Apollo GraphQL in the InfiniteScroll component. In normal use cases, it is functioning as expected. However, when the Elder Scroll Legends API server returns an empty array, there is [an issue](https://github.com/apollographql/react-apollo/issues/3468): When fetchMore gets an empty array from the server, updateQuery is called as it should be, but the component never rerenders, thus loading being indefinitely true. 
 
-#### To do
+#### To do 
 
 We will need to find a better way to handle the empty array response from the API to fall back gracefully instead of showing the "Loading..." text forever at the end.
 
@@ -82,3 +82,11 @@ We are using the Material-UI CSS for the card UI because it facilitates faster d
 #### To do
 
 We can use customized style-components that would make the styling CSS more readeable for team development.
+
+#### Context
+
+When one runs the web application for the first time on their browser, it takes longer time to render the initial application. It becomes faster when you enter search terms to filter the results. The slow first time rendering is due to this application only doing client-side rendering.
+
+#### To do
+
+We can implement server-side rendering to make the first time loading of the application faster.
