@@ -1,3 +1,11 @@
+### Overview
+
+This is the web application for the Elder Scroll Legends API /v1/cards endpoint that is encapsulated by a GraphQL server to query and manipulate the response data easily. 
+
+Here is the GitHub link to our GraphQL server application: https://github.com/smiley168/elder-scroll-legends-gql
+
+Here is the demo deployed GraphQL playground in Heroku: https://llei-elder-scroll-legends-gql.herokuapp.com/
+
 ### Prerequisities
 
 Install latest Node and NPM (or NPX)
@@ -6,7 +14,7 @@ Install latest Node and NPM (or NPX)
 
 1. [Install NPM](https://www.npmjs.com/get-npm)
 
-1. [Install NPX](https://www.npmjs.com/package/npx)
+1. [Install NPX](https://www.npmjs.com/package/npx) - 
 
 
 ### Project creation
@@ -35,6 +43,8 @@ git clone git@github.com:smiley168/elder-scroll-legends.git
 1. npm start
 
 1. Open http://localhost:3000 to view it in the browser.
+
+1. When you make changes to the code running in development mode, the page will automatically reload with your changes.
 
 
 #### Deployment to Heroku
