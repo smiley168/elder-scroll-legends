@@ -9,6 +9,11 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -48,9 +53,31 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: '10px',
   },
+  listLabel: {
+    flex: 2,
+    padding: '3px 0',
+    margin: '0',
+    fontSize: '0.8rem',
+  },
+  listContent: {
+    width: '8rem',
+    padding: '3px 0 3px 5px',
+    margin: '0',
+  },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
+  },
+  root: {
+    width: '100%',
+    backgroundColor: theme.palette.background.paper,
+  },
+  inline: {
+    display: 'inline',
+  },
+  item: {
+    paddingTop: '0',
+    paddingBottom: '0',
   },
 }));
 
@@ -195,18 +222,24 @@ function ElderScrollsLegends() {
                     title="setName"
                   />
                   <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="subtitle2">
-                      <b>Name</b>: {name}
-                    </Typography>
-                    <Typography gutterBottom variant="subtitle2">
-                    <b>Text</b>: {text}
-                    </Typography>
-                    <Typography gutterBottom variant="subtitle2">
-                    <b>Set Name</b>: {setName}
-                    </Typography>
-                    <Typography gutterBottom variant="subtitle2">
-                    <b>Type</b>: {type}
-                    </Typography>
+                    <List className={classes.root}>
+                      <ListItem alignItems="flex-start" className={classes.item}>
+                        <ListItemText className={classes.listLabel} secondary="Name: " />
+                        <ListItemText className={classes.listContent} secondary={name} />
+                      </ListItem>
+                      <ListItem alignItems="flex-start" className={classes.item}>
+                        <ListItemText className={classes.listLabel} secondary="Text: " />
+                        <ListItemText className={classes.listContent} secondary={text} />
+                      </ListItem>
+                      <ListItem alignItems="flex-start" className={classes.item}>
+                        <ListItemText className={classes.listLabel} secondary="Set Name: " />
+                        <ListItemText className={classes.listContent} secondary={setName} />
+                      </ListItem>
+                      <ListItem alignItems="flex-start" className={classes.item}>
+                        <ListItemText className={classes.listLabel} secondary="Type: " />
+                        <ListItemText className={classes.listContent} secondary={type} />
+                      </ListItem>
+                    </List>
                   </CardContent>
 
                 </Card>
@@ -231,22 +264,6 @@ function ElderScrollsLegends() {
       {/* End footer */}
     </React.Fragment>
     );
-  // return data.cards.map(({ name, type, setName, text }) => (
-  //   <div key={name}>
-  //     <h4>
-  //       Name: {name}
-  //     </h4>
-  //     <p>
-  //       Set Name: {setName}
-  //     </p>
-  //     <p>
-  //       Type: {type}
-  //     </p>
-  //     <p>
-  //       text: {text}
-  //     </p>
-  //   </div>
-  // ));
 }
 const client = new ApolloClient({
   // uri: "https://48p1r2roz4.sse.codesandbox.io"
@@ -259,29 +276,8 @@ const App = () => (
     <div>
       <ElderScrollsLegends />
     </div>
+    <div>Learn about Elder Scrolls Legends</div>
   </ApolloProvider>
 );
-
-// render(<App />, document.getElementById("root"));
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;

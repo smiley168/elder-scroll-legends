@@ -77,3 +77,22 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 2) Install the material-ui dependencies
 
 3) Install the Apollo GraphQL client
+
+
+### Getting Started
+
+#### Clone the repository from Github
+
+git clone git@github.com:smiley168/elder-scroll-legends.git
+
+#### Install the dependencies
+
+cd elder-scroll-legends
+
+npm install
+
+#### Run the web application locally
+
+npm start
+
+Open http://localhost:3000 to view it in the browser.
