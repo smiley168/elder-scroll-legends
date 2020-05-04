@@ -124,3 +124,11 @@ Ideally, given enough development time, I would write more tests to cover the co
 #### To do: Write more tests
 
 If I have more time, I would like to write more tests to increase test coverage. 
+
+#### Context
+
+The current loading GIF is not styled to its best.
+
+#### To do: re-style the loading GIF
+
+If I have more time, I would like to style the loading GIF to look nicer on the UI.
