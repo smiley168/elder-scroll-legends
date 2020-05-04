@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { render } from "react-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ApolloClient from "apollo-boost";
 import AppBar from '@material-ui/core/AppBar';
@@ -11,9 +10,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import TextField from '@material-ui/core/TextField';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -128,19 +125,16 @@ function ElderScrollsLegends() {
         name: searchTerm,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
-        alert(`More results: searchterm ${searchTerm}  ${fetchMoreResult.cards.length}`);
-
         if (!fetchMoreResult) return prev;
 
         return Object.assign({}, prev, {
-          // cards: [...prev.cards, ...fetchMoreResult.cards]
           cards: [...fetchMoreResult.cards]
         });
       }
     })
   };  
   
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>   Loading <img src="https://media.giphy.com/media/sSgvbe1m3n93G/giphy.gif" /></p>;
   if (error) return <p>Error :( {error}</p>;
     return (
  
@@ -169,15 +163,15 @@ function ElderScrollsLegends() {
                       Search
                     </Button>
                   </form>
+                  {searchTerm && data && data.cards &&
+                  (<Typography align="justify" color="textSecondary" paragraph>
+                      Search results: {data.cards.length}
+                  </Typography>)}
                 </Grid>
               </Grid>
             </div>
           </Container>
         </div>
-  
-
-      <div>Data: {data.cards.length} {data.cards.hasMore ? "Yes" : "No"}</div>
-      <div>Search Results: {searchResults.length}</div>
       
       {data.cards && 
         (
@@ -200,10 +194,10 @@ function ElderScrollsLegends() {
               })
             }
             hasMore={searchTerm.length > 0 && data.cards.length < 20 ? false : true}
-            loader={<h4>Loading...</h4>}
+            loader={<h4>Loading More <img src="https://media.giphy.com/media/sSgvbe1m3n93G/giphy.gif" /></h4>}
             endMessage={
               <p style={{textAlign: 'center'}}>
-                <b>Yay! You have seen it all</b>
+                <b>End of Search Results</b>
               </p>
             }
         > 
@@ -257,7 +251,7 @@ function ElderScrollsLegends() {
           Footer
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+          Elder Scroll  Legends take-home Exercise footer
         </Typography>
         <Copyright />
       </footer>
@@ -266,9 +260,7 @@ function ElderScrollsLegends() {
     );
 }
 const client = new ApolloClient({
-  // uri: "https://48p1r2roz4.sse.codesandbox.io"
   uri: "https://llei-elder-scroll-legends-gql.herokuapp.com/"
-  // uri: "https://llei-elder-scroll-legends-gql.herokuapp.com/"
 });
 
 const App = () => (
@@ -276,7 +268,6 @@ const App = () => (
     <div>
       <ElderScrollsLegends />
     </div>
-    <div>Learn about Elder Scrolls Legends</div>
   </ApolloProvider>
 );
 

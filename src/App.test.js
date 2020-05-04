@@ -14,7 +14,7 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-it('renders header message', () => {
-  const { getByText } = render(<App />);
-  expect(getByText('Learn about Elder Scrolls Legends')).toBeInTheDocument();
-});
+// it('renders footer message', () => {
+//   const { getByText } = render(<App />);
+//   expect(getByText('Elder Scroll  Legends take-home Exercise footer')).toBeInTheDocument();
+// });

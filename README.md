@@ -1,82 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Prerequisities
 
-## Available Scripts
+Install latest Node and NPM (or NPX)
 
-In the project directory, you can run:
+1. [Install Node.js](https://nodejs.org/en/download/package-manager/)
 
-### `npm start`
+1. [Install NPM](https://www.npmjs.com/get-npm)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-
+1. [Install NPX](https://www.npmjs.com/package/npx)
 
 
 ### Project creation
 
-1) npx create-react-app elder-scroll-legends
+1. npx create-react-app elder-scroll-legends
 
-2) Install the material-ui dependencies
+1. Install the material-ui dependencies
 
-3) Install the Apollo GraphQL client
+1. Install the Apollo GraphQL client
 
 
 ### Getting Started
@@ -87,12 +26,49 @@ git clone git@github.com:smiley168/elder-scroll-legends.git
 
 #### Install the dependencies
 
-cd elder-scroll-legends
+1. cd elder-scroll-legends
 
-npm install
+1. npm install
 
-#### Run the web application locally
+#### Run the web application locally in development mode
 
-npm start
+1. npm start
 
-Open http://localhost:3000 to view it in the browser.
+1. Open http://localhost:3000 to view it in the browser.
+
+
+#### Deployment to Heroku
+
+1. heroku create llei-elder-scroll-legends-1 --buildpack mars/create-react-app
+
+1. git remote set-url heroku https://git.heroku.com/llei-elder-scroll-legends-1.git
+
+1. git push heroku master 
+
+1. heroku open
+
+Learn more on how to deploy to this react app to Heroku [here](https://github.com/mars/create-react-app-buildpack)
+
+### Working Demo link in Heroku
+
+https://llei-elder-scroll-legends-1.herokuapp.com/
+
+
+
+### To Dos
+
+#### Context
+
+We are using the fetchMore function and the updateQuery function provided by Apollo GraphQL in the InfiniteScroll component. In normal use cases, it is functioning as expected. However, when the Elder Scroll Legends API server returns an empty array, there is [an issue](https://github.com/apollographql/react-apollo/issues/3468): When fetchMore gets an empty array from the server, updateQuery is called as it should be, but the component never rerenders, thus loading being indefinitely true. 
+
+#### To do
+
+We will need to find a better way to handle the empty array response from the API to fall back gracefully instead of showing the "Loading..." text forever at the end.
+
+#### Context
+
+We are using the Material-UI CSS for the card UI because it facilitates faster development. However, it is not the most flexible styleguide to be used in my opinion. 
+
+#### To do
+
+We can use customized style-components that would make the styling CSS more readeable for team development.
