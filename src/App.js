@@ -262,9 +262,15 @@ function ElderScrollsLegends() {
     </React.Fragment>
     );
 }
+
+var apolloClientUri = "https://elder-scroll-legends-gql.herokuapp.com/"; // use the production URL when no graphql server running locally
+
+if(process.env.NODE_ENV === 'development') {
+  apolloClientUri = "http://localhost:4000/";
+}
+
 const client = new ApolloClient({
-  // uri: "https://elder-scroll-legends-gql.herokuapp.com/"
-  uri: "http://localhost:4000/"
+  uri: apolloClientUri
 });
 
 const App = () => (
