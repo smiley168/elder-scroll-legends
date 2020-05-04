@@ -128,14 +128,10 @@ function ElderScrollsLegends() {
       </AppBar>
       <main>
         <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography component="h2" variant="h2" align="center" color="textPrimary" gutterBottom>
-            THE ELDER SCROLLS: LEGENDS
-            </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+          <Container maxWidth="lg">
+            
+            <Typography variant="h5" align="justify" color="textSecondary" paragraph>
+              The Elder Scrolls: Legends is a competitive strategy card game set in the Elder Scrolls universe. Craft decks featuring intimidating abilities and powerful allies from across all of Tamriel as you take on story-rich campaigns as well as other players.
             </Typography>
             <div>
               <Grid container spacing={2} justify="center">
