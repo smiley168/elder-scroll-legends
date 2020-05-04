@@ -112,4 +112,15 @@ We can implement server-side rendering to make the first time loading of the app
 
 The search box is currently in the middle of the page which takes up a good portion of the above-the-fold of the page: i.e. less space for the actual cards.
 
-#### To do: Incorporate the Search box UI into the header on the top right hand corner to save space for the actual cards rendering.
+#### To do: Incorporate the Search box UI into the header 
+
+Incorporate the Search box UI into the header on the top right hand corner to save space for the actual cards rendering.
+
+
+#### Context
+
+Ideally, given enough development time, I would write more tests to cover the code I wrote to increase test coverage. Currently, I only have 1 test to ensure the app does not crash.
+
+#### To do: Write more tests
+
+If I have more time, I would like to write more tests to increase test coverage. 
