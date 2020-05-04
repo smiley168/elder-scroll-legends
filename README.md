@@ -4,7 +4,7 @@ This is the web application for the Elder Scroll Legends API /v1/cards endpoint 
 
 Here is the GitHub link to our GraphQL server application: https://github.com/smiley168/elder-scroll-legends-gql
 
-Here is the demo deployed GraphQL playground in Heroku: https://llei-elder-scroll-legends-gql.herokuapp.com/
+Here is the demo deployed GraphQL playground in Heroku: https://elder-scroll-legends.herokuapp.com/
 
 ### Prerequisities
 
@@ -66,13 +66,15 @@ There are 2 repositories you need to pull from Github to run both locally.
 
 #### Deployment to Heroku
 
-1. ```heroku create llei-elder-scroll-legends-1 --buildpack mars/create-react-app```
+1. ```heroku create elder-scroll-legends --buildpack mars/create-react-app```
 
-1. ```git remote set-url heroku https://git.heroku.com/llei-elder-scroll-legends-1.git```
+1. ```git remote set-url heroku https://git.heroku.com/elder-scroll-legends.git```
 
 1. ```git push heroku master```
 
 1. ```heroku open```
+
+Note: you might need to use a different app name than `elder-scroll-legends` in Heroku since I have already taken that app name.
 
 Learn more on how to deploy to this react app to Heroku [here](https://github.com/mars/create-react-app-buildpack)
 
